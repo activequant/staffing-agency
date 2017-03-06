@@ -1,0 +1,43 @@
+<h1>Edit Position</h1>
+<%= form_for :position, url: positions_path(@position), method: :post do |f| %>
+
+
+<!-- hidden field for ID -->
+  <%= f.hidden_field :id, :value => @position.id %>
+
+  <p>
+    UPSA Project<br>
+    <%= f.text_field :upsa_project %>
+  </p>
+  
+  <p>
+    Profile <%= f.text_field :profile %>
+  </p>
+  
+  <p>
+	
+    Description <%= f.text_area :description %>
+  </p>
+  
+ <p>
+    Client Ref Id  <%= f.text_field :client_ref_id %>
+  </p>
+  <p>
+    Priority  <%= f.text_field :priority %>
+  </p>
+  <p>
+    
+    Fill by <%= f.text_field :fill_by %>
+	</p> 
+  <p>
+    Sales level <%= f.text_field :sales_level %>
+  </p> 
+  
+  <p>
+    Main contact <%= f.collection_select(:contact, Contact.all, :id, :full_name, {:selected => :contact[&:contact_id]}, prompt: true) %>
+  </p> 
+  
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

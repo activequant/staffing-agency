@@ -1,0 +1,42 @@
+<h1>Edit Contact</h1>
+<p>Always write properly</p>
+<%= form_for :contact, url: contacts_path(@contact), method: :post do |f| %>
+
+<!-- hidden field for ID -->
+  <%= f.hidden_field :id, :value => @contact.id %>
+
+  <p>
+    Full name<br>
+    <%= f.text_field :full_name %>
+  </p>
+  <p>
+	Greeting<br>
+    Hello <%= f.text_field :greeting %>
+  </p>
+  
+  <p>
+	Email Address<br>
+    Contact email address <%= f.text_field :email %>
+  </p>
+  
+  <p>
+	Phone number<br>
+    Contact phone number <%= f.text_field :phone %>
+  </p>
+
+  
+  <p>
+	Likes<br>
+    He/She likes or has as hobbies: <%= f.text_field :likes %>
+  </p>
+  
+  
+  <p>
+	Dislikes<br>
+    He/She dislikes: <%= f.text_field :dislikes %>
+  </p>
+  
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

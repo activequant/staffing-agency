@@ -1,0 +1,49 @@
+<h1>Edit Resource</h1>
+<p>Always write properly, this will go into an email template ... </p>
+<%= form_for :resource, url: resources_path(@resource), method: :post do |f| %>
+
+
+<!-- hidden field for ID -->
+  <%= f.hidden_field :id, :value => @resource.id %>
+
+  <p>
+    Full name<br>
+    <%= f.text_field :full_name %>
+  </p>
+  
+  <p>
+	Email Address<br>
+    Contact email address <%= f.text_field :email %>
+  </p>
+  
+  <p>
+	Phone number<br>
+    Contact phone number <%= f.text_field :phone %>
+  </p>
+  
+ <p>
+    Gender<br>
+    This is a ...  <%= f.text_field :gender %>
+  </p>
+  <p>
+    Main skill<br>
+    He/She is a ... <%= f.text_field :main_skill %>
+  </p>
+  <p>
+    Notice period<br>
+    His/Her notice period is ... <%= f.text_field :notice_period %>
+  </p> 
+  <p>
+    Salary expectation<br>
+    His/Her expected salary is ... <%= f.text_field :salary_expectation %>
+  </p> 
+  
+  <p>
+    Free text description<br>
+    Here are some additional words about him/her: <%= f.text_area :verbal_description %>
+  </p> 
+  
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

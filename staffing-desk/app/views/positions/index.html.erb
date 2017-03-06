@@ -1,0 +1,31 @@
+<h1>Position list</h1>
+ 
+<table class="table">
+  <tr>
+    <th>ID</th>
+    <th>UPSA Project</th>
+	<th>Profile</th>
+	<th>Sales level</th>
+	<th>Priority</th>
+	<th>ClRefId</th>
+	<th>Fill by</th>
+	<th>Main contact</th>
+  </tr>
+ 
+  <% @positions.each do |position| %>
+    <tr>
+      <td><%= position.id %></td>
+      <td><%= position.upsa_project %></td>
+	  <td><%= position.profile %></td>
+	  <td><%= position.sales_level %></td>
+	  <td><%= position.priority %></td>
+	  <td><%= position.client_ref_id %></td>
+	  <td><%= position.fill_by %></td>
+	  <td><%= position.contact.full_name %></td>
+	  <td><%= link_to 'Edit', edit_position_path(position) %></td>
+      <td><%= link_to 'Show', resource_path(position) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'New', new_position_url %></td>

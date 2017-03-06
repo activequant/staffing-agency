@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  upsa_project: MyString
+  description: MyText
+  profile: MyString
+  client_ref_id: MyString
+  sales_level: MyString
+  priority: 1
+  fill_by: 2017-03-05
+  job_desv: 
+  contact: one
+
+two:
+  upsa_project: MyString
+  description: MyText
+  profile: MyString
+  client_ref_id: MyString
+  sales_level: MyString
+  priority: 1
+  fill_by: 2017-03-05
+  job_desv: 
+  contact: two
