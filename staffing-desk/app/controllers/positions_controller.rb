@@ -14,6 +14,7 @@ class PositionsController < ApplicationController
 	if !params[:position].has_key?(:id) or params[:position][:id] == ""
 		pparams = position_params
 		pparams[:contact] = Contact.find(pparams[:contact])
+		pparams[:positionStatus] = PositionStatus.find(pparams[:positionStatus])	
 		@position = Position.new(pparams) 
 		@position.save
 		redirect_to @position
@@ -38,6 +39,7 @@ class PositionsController < ApplicationController
 	@position = Position.find(params[:position][:id])
 	pparams = position_params
 	pparams[:contact] = Contact.find(pparams[:contact])	
+	pparams[:positionStatus] = PositionStatus.find(pparams[:positionStatus])	
 	if @position.update(pparams)
 	  redirect_to @position
 	else
@@ -48,6 +50,6 @@ class PositionsController < ApplicationController
   
   private
 	  def position_params
-		params.require(:position).permit(:id, :upsa_project, :description, :profile, :client_ref_id, :sales_level, :priority, :fill_by, :job_desc, :contact)
+		params.require(:position).permit(:id, :upsa_project, :description, :profile, :location, :client_ref_id, :sales_level, :priority, :fill_by, :job_desc, :contact, :positionStatus)
 	  end
 end

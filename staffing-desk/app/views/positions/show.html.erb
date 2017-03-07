@@ -1,4 +1,4 @@
-<h1>Positon <%= @position.id %></h1>
+<h1>Position <%= @position.id %></h1>
 
   <p>
     Profile: <%= @position.profile %>
@@ -6,6 +6,9 @@
   
   <p>
 	UPSA project<%= @position.upsa_project %>
+  </p>
+  <p>
+    Location <%= @position.location %>
   </p>
   
   <p>
@@ -25,7 +28,9 @@
   <p>
     Fill by <%= @position.fill_by %>
   </p> 
-  
+  <p>
+    Status <%=(@position.positionStatus == nil)?"":@position.positionStatus.value %>
+  </p> 
   <p>
     
     Main contact <%= @position.contact.full_name %>

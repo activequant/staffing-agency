@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  timestamp: 2017-03-06 20:53:05
+  comment: MyString
+  proposalStatus: one
+
+two:
+  timestamp: 2017-03-06 20:53:05
+  comment: MyString
+  proposalStatus: two

@@ -1,0 +1,34 @@
+<h1>Propositions</h1>
+ 
+<table class="table">
+  <tr>
+    <th>ID</th>
+    <th>Position</th>
+	<th>Resource</th>
+	<th>Proposition date</th>
+	<th>Last status</th>
+	<th>Last status update</th>
+  </tr>
+ 
+  <% @propositions.each do |proposition| %>
+    <tr>
+      <td><%= proposition.id %></td>
+      <td>
+	  <%= link_to position_path(proposition.position) do %>
+		<%= proposition.position.location %> - <%= proposition.position.client_ref_id %> - <%= proposition.position.description %>
+	  <% end %>
+	  </td>
+	  <td>
+	  <%= link_to resource_path(proposition.resource) do %>
+		<%= proposition.resource.full_name %> - <%= proposition.resource.notice_period %></td>
+	  <% end %>
+	  <td><%= proposition.proposal_date %></td>
+	  <td></td>
+	  	  <td></td>
+	  <td><%= link_to 'Edit', edit_proposition_path(proposition) %></td>
+      <td><%= link_to 'Show', proposition_path(proposition) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'New', new_proposition_url %></td>

@@ -4,11 +4,13 @@
   <tr>
     <th>ID</th>
     <th>UPSA Project</th>
+	<th>Location</th>
 	<th>Profile</th>
 	<th>Sales level</th>
 	<th>Priority</th>
 	<th>ClRefId</th>
 	<th>Fill by</th>
+	<th>Status</th>
 	<th>Main contact</th>
   </tr>
  
@@ -16,14 +18,16 @@
     <tr>
       <td><%= position.id %></td>
       <td><%= position.upsa_project %></td>
+	  <td><%= position.location %></td>
 	  <td><%= position.profile %></td>
 	  <td><%= position.sales_level %></td>
 	  <td><%= position.priority %></td>
 	  <td><%= position.client_ref_id %></td>
 	  <td><%= position.fill_by %></td>
+	  <td><%= (position.positionStatus == nil)?"":position.positionStatus.value %></td>
 	  <td><%= position.contact.full_name %></td>
 	  <td><%= link_to 'Edit', edit_position_path(position) %></td>
-      <td><%= link_to 'Show', resource_path(position) %></td>
+      <td><%= link_to 'Show', position_path(position) %></td>
     </tr>
   <% end %>
 </table>

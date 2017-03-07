@@ -15,6 +15,10 @@
   </p>
   
   <p>
+    Location <%= f.text_field :location %>
+  </p>
+  
+  <p>
 	
     Description <%= f.text_area :description %>
   </p>
@@ -33,9 +37,15 @@
     Sales level <%= f.text_field :sales_level %>
   </p> 
   
+  
   <p>
-    Main contact <%= f.collection_select(:contact, Contact.all, :id, :full_name, {:selected => :contact[&:contact_id]}, prompt: true) %>
-  </p> 
+    Position Status <%= f.collection_select(:positionStatus, PositionStatus.all, :id, :value, {:selected => :id}, {:autocomplete => :off, prompt:true }) %>
+	
+  </p>
+  <p>
+    Main contact <%= f.collection_select(:contact, Contact.all, :id, :full_name, {:selected => :id}, {:autocomplete => :off, prompt:true }) %>
+	
+  </p>
   
   <p>
     <%= f.submit %>

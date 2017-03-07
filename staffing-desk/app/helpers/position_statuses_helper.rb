@@ -1,0 +1,2 @@
+module PositionStatusesHelper
+end

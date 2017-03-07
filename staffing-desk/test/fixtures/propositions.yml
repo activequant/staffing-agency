@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  position: one
+  resource: one
+  proposal_date: 2017-03-06
+  proposalStatus: one
+
+two:
+  position: two
+  resource: two
+  proposal_date: 2017-03-06
+  proposalStatus: two

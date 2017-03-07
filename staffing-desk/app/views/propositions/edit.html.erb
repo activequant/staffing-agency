@@ -1,0 +1,28 @@
+<h1>Edit Proposition</h1>
+<%= form_for :proposition, url: propositions_path(@proposition), method: :post do |f| %>
+
+
+<!-- hidden field for ID -->
+  <%= f.hidden_field :id, :value => @proposition.id %>
+
+  <p>
+    Position<br>
+	ID: <%= @proposition.position.id %> - 
+    <%= f.text_field :position %>
+  </p>
+  
+  <p>
+    Resource 
+	ID: <%= @proposition.resource.id %> - 
+	<%= f.text_field :resource %>
+  </p>
+  
+
+  <p>
+    Date (yyyy-mm-dd) <%= f.text_field :proposal_date %>
+  </p>
+    
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

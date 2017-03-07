@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170305182040) do
+ActiveRecord::Schema.define(version: 20170307200653) do
 
   create_table "contacts", force: :cascade do |t|
     t.string   "full_name"
@@ -19,6 +19,12 @@ ActiveRecord::Schema.define(version: 20170305182040) do
     t.string   "phone"
     t.string   "likes"
     t.string   "dislikes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "position_statuses", force: :cascade do |t|
+    t.string   "value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -33,9 +39,42 @@ ActiveRecord::Schema.define(version: 20170305182040) do
     t.date     "fill_by"
     t.binary   "job_desc"
     t.integer  "contact_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "status_id"
+    t.integer  "positionStatus_id"
+    t.string   "location"
     t.index ["contact_id"], name: "index_positions_on_contact_id"
+    t.index ["positionStatus_id"], name: "index_positions_on_positionStatus_id"
+    t.index ["status_id"], name: "index_positions_on_status_id"
+  end
+
+  create_table "proposal_statuses", force: :cascade do |t|
+    t.string   "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "proposition_updates", force: :cascade do |t|
+    t.datetime "timestamp"
+    t.string   "comment"
+    t.integer  "proposalStatus_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["proposalStatus_id"], name: "index_proposition_updates_on_proposalStatus_id"
+  end
+
+  create_table "propositions", force: :cascade do |t|
+    t.integer  "position_id"
+    t.integer  "resource_id"
+    t.date     "proposal_date"
+    t.integer  "proposalStatus_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "comment"
+    t.index ["position_id"], name: "index_propositions_on_position_id"
+    t.index ["proposalStatus_id"], name: "index_propositions_on_proposalStatus_id"
+    t.index ["resource_id"], name: "index_propositions_on_resource_id"
   end
 
   create_table "resources", force: :cascade do |t|

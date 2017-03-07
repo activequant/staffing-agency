@@ -1,0 +1,2 @@
+class PositionStatus < ApplicationRecord
+end
